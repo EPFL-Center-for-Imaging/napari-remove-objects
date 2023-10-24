@@ -27,9 +27,6 @@ class RemoveObjectsWidget(QWidget):
         )
         self._on_layer_selection_change(self.active_layer)
 
-        import numpy as np
-        self.viewer.add_labels(np.arange(10)[None].astype(int))
-    
     def _on_layer_selection_change(self, *args, **kwargs):
         for layer in self.viewer.layers:
             if self._delete_action in layer.mouse_drag_callbacks:
